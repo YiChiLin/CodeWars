@@ -14,5 +14,13 @@ namespace CodeWarsTests._6ku
             var result = target.GetCards();
             Assert.AreEqual(24,result.Count());
         }
+
+        [Test]
+        public void Has24UniqueCards()
+        {
+            var target = new BingoCard();
+            var result = target.GetCards();
+            Assert.AreEqual(result.Count(), result.Distinct().Count());
+        }
     }
 }
