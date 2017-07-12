@@ -19,21 +19,15 @@ namespace CodeWars._6kyu
                 new BingoCardColumn {Name = "G", MinNumber = 46, MaxNumber = 60},
                 new BingoCardColumn {Name = "O", MinNumber = 61, MaxNumber = 75}
             };
-
+            
             foreach (var item in column)
             {
+                var numberInRange = Enumerable.Range(item.MinNumber, 15).ToList();
                 var numberOfCards = (item.Name == "N") ? 4 : 5;
-                for (var i = 0; i < numberOfCards; i++)
-                {
-                    var card = item.Name + _random.Next(item.MinNumber, item.MaxNumber);
-                    while (cards.Contains(card))
-                    {
-                        card = item.Name + _random.Next(item.MinNumber, item.MaxNumber);
-                    }
-                    cards.Add(card);
-                }
+                var randomNumbers = numberInRange.OrderBy(num => _random.Next())
+                                                 .Take(numberOfCards).ToList();
+                cards.AddRange(randomNumbers.Select(number => item.Name + number));
             }
-
             return cards;
         }
 
