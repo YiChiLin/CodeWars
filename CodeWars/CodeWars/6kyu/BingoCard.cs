@@ -25,7 +25,7 @@ namespace CodeWars._6kyu
                 var numberInRange = Enumerable.Range(item.MinNumber, 15).ToList();
                 var numberOfCards = (item.Name == "N") ? 4 : 5;
                 var randomNumbers = numberInRange.OrderBy(num => _random.Next())
-                                                 .Take(numberOfCards).ToList();
+                                                 .Take(numberOfCards);
                 cards.AddRange(randomNumbers.Select(number => item.Name + number));
             }
             return cards;
