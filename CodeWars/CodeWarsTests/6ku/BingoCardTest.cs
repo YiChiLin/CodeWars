@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using CodeWars._6kyu;
 using NUnit.Framework;
 
@@ -69,6 +70,27 @@ namespace CodeWarsTests._6ku
                 if (num < minNum || num > maxNum) result = false;
             }
             return result;
+        }
+
+        [Ignore]
+        public void testFun()
+        {
+            // Create a byte array to hold the random value.
+            byte[] randomNumber = new byte[1];
+
+            // Create a new instance of the RNGCryptoServiceProvider. 
+            RNGCryptoServiceProvider Gen = new RNGCryptoServiceProvider();
+
+            // Fill the array with a random value.
+            Gen.GetBytes(randomNumber);
+
+            // Convert the byte to an integer value to make the modulus operation easier.
+            int rand = Convert.ToInt32(randomNumber[0]);
+
+            // Return the random number mod the number
+            // of sides.  The possible values are zero-
+            // based, so we add one.
+            Assert.AreEqual(1,rand % 6 + 1);
         }
     }
 }
