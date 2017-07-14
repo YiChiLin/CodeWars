@@ -57,7 +57,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="6ku\BingoCardTest.cs" />
+    <Compile Include="6kyu\BingoCardTest.cs" />
+    <Compile Include="7kyu\AccumulTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
