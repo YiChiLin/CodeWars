@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
+﻿using CodeWars._7kyu;
 using NUnit.Framework;
 
 namespace CodeWarsTests._7kyu
@@ -24,38 +21,6 @@ namespace CodeWarsTests._7kyu
             var target = new Accumul();
             var result = target.Accum(input);
             Assert.AreEqual(expected, result);
-        }
-
-        [Ignore]
-        public void testFun()
-        {
-            var str = "Apfel";
-            var strLength = str.Count();
-            var separateArr = str.ToCharArray();
-        }
-    }
-
-    internal class Accumul
-    {
-        public string Accum(string str)
-        {
-            var resultStr = new StringBuilder();
-            
-            var separateArr = str.ToCharArray();
-            for (var i = 0; i < separateArr.Length; i++)
-            {
-                resultStr.Append(separateArr[i].ToString().ToUpper());
-                for (var a = 1; a <= i; a++)
-                {
-                    resultStr.Append(separateArr[i].ToString().ToLower());
-                }
-                if (i != separateArr.Length-1)
-                {
-                    resultStr.Append("-");                    
-                }
-            }
-
-            return resultStr.ToString();
         }
     }
 }
