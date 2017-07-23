@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using CodeWars._6kyu;
+using NUnit.Framework;
 
 namespace CodeWarsTests._6kyu
 {
@@ -7,32 +8,14 @@ namespace CodeWarsTests._6kyu
     {
         [TestCase("abcd",true,TestName = "abcd_should_be_true")]
         [TestCase("abab",false,TestName = "abab_should_be_false")]
+        [TestCase("x", true, TestName = "x_should_be_true")]
+        [TestCase("fdsyffdsyffdsyffdsyffdsyf", false, TestName = "fdsyffdsyffdsyffdsyffdsyf_should_be_false")]
+        [TestCase("utdutdtdutd", true, TestName = "utdutdtdutd_should_be_false")]
         public void IsPrimeStringTest(string str, bool expected)
         {
             var target = new PrimeString();
             var result = target.IsPrimeString(str);
-
             Assert.AreEqual(expected, result);
-        }
-    }
-
-    internal class PrimeString
-    {
-        public bool IsPrimeString(string str)
-        {
-            for (var start = 0; start < str.Length; start++)
-            {
-                var frontCompositionLength = start + 1;
-                if (frontCompositionLength < str.Length)
-                {
-                    var frontComposition = str.Substring(start, frontCompositionLength - start);
-                    var backCompositionLength = str.Length - (frontCompositionLength + 1);
-                    var backComposition = str.Substring(frontCompositionLength + 1, backCompositionLength);
-                    if (frontComposition == backComposition)
-                        return false;
-                }
-            }
-            return true;
         }
     }
 }
