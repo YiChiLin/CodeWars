@@ -8,19 +8,29 @@ namespace CodeWarsTests._7kyu
     {
         //Mumbling
         [Test]
-        public void Accumlate_A_and_Will_Get_A()
+        public void Accumlate_A_Should_Return_A()
         {
-            var target = new Accumul();
-            var result = target.Accum("A");
-            Assert.AreEqual("A",result);
+            AccumlateShouldBe("A","A");
         }
 
-        [TestCase("AB","A-Bb")]
-        public void Accumlate(string input,string expected)
+        [Test]
+        public void Accumlate_AB_Should_Return_A_Dash_Bb()
+        {
+            AccumlateShouldBe("AB","A-Bb");
+        }
+
+        [Test]
+        public void Accumlate_Ab_Should_Return_A_Dash_Bb()
+        {
+            AccumlateShouldBe("Ab", "A-Bb");
+        }
+
+        public void AccumlateShouldBe(string input,string expected)
         {
             var target = new Accumul();
             var result = target.Accum(input);
             Assert.AreEqual(expected, result);
         }
+
     }
 }
