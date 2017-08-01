@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="6kyu\BingoCardTest.cs" />
     <Compile Include="6kyu\PrimStringTest.cs" />
+    <Compile Include="6kyu\StringAverageTest.cs" />
     <Compile Include="7kyu\AccumulTest.cs" />
     <Compile Include="Others\FizzBuzzTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
