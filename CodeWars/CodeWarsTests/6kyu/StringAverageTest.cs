@@ -22,6 +22,14 @@ namespace CodeWarsTests._6kyu
             var result = target.GetAvarage("");
             Assert.AreEqual("n/a", result);
         }
+
+        [Test]
+        public void InputString_IsGreater_Than_nine_Shuld_Return_n_slash_a()
+        {
+            var target = new StringAverage();
+            var result = target.GetAvarage("sixteen twenty eleven thirteen six");
+            Assert.AreEqual("n/a", result);
+        }
     }
 
     public class StringAverage
@@ -32,24 +40,25 @@ namespace CodeWarsTests._6kyu
             {0, "zero"},{1, "one"},{2, "two"},{3, "three"},{4, "four"},{5, "five"},{6, "six"},{7, "seven"},{8, "eight"},{9, "nine"},
         };
 
-
         public string GetAvarage(string input)
         {
-            if (string.IsNullOrEmpty(input)) return "n/a";
+            var invaildInput = "n/a";
+            if (string.IsNullOrEmpty(input)) return invaildInput;
 
-            var inputNumbers = input.Split(' ');
-            var avarage = GetSum(inputNumbers) / inputNumbers.Count();
+            var numbers = input.Split(' ').Select(NumberStringConverter).ToList();
+            if (numbers.Contains(invaildInput)) return invaildInput;
+            var avarage = GetSum(numbers) / numbers.Count();
             return NumberStringConverter(avarage).ToString();
         }
 
-        private int GetSum(string[] inputNumbers)
+        private static int GetSum(IEnumerable<object> numbers)
         {
-            return inputNumbers.Select(value => (int)NumberStringConverter(value)).Sum();
+            return numbers.Select(item=>(int)item).Sum();
         }
 
         private object NumberStringConverter(object key)
         {
-            return _numberStringConverter[key];
+            return _numberStringConverter.ContainsKey(key) ? _numberStringConverter[key] : "n/a";
         }
     }
 }
