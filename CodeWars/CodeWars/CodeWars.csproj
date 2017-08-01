@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="6kyu\BingoCard.cs" />
     <Compile Include="6kyu\PrimeString.cs" />
+    <Compile Include="6kyu\StringAverage.cs" />
     <Compile Include="7kyu\Accumul.cs" />
     <Compile Include="Others\FizzBuzz.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
