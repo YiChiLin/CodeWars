@@ -35,6 +35,8 @@ namespace CodeWarsTests._6kyu
 
         public string GetAvarage(string input)
         {
+            if (string.IsNullOrEmpty(input)) return "n/a";
+
             var inputNumbers = input.Split(' ');
             var avarage = GetSum(inputNumbers) / inputNumbers.Count();
             return NumberStringConverter(avarage).ToString();
