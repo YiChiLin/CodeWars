@@ -15,7 +15,13 @@ namespace CodeWarsTests._6kyu
             Assert.AreEqual(expected, result);
         }
 
-        
+        [Test]
+        public void InputString_IsEmpty_Should_Return_n_slash_a()
+        {
+            var target = new StringAverage();
+            var result = target.GetAvarage("");
+            Assert.AreEqual("n/a", result);
+        }
     }
 
     public class StringAverage
