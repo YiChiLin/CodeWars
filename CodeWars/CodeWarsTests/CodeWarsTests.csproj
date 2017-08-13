@@ -60,6 +60,7 @@
     <Compile Include="6kyu\BingoCardTest.cs" />
     <Compile Include="6kyu\PrimStringTest.cs" />
     <Compile Include="6kyu\StringAverageTest.cs" />
+    <Compile Include="6kyu\DeadAntCountTest.cs" />
     <Compile Include="7kyu\AccumulTest.cs" />
     <Compile Include="7kyu\BandNameGeneratorTest.cs" />
     <Compile Include="Others\FizzBuzzTest.cs" />
