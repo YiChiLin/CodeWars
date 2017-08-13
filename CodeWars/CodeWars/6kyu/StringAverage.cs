@@ -5,10 +5,9 @@ namespace CodeWars._6kyu
 {
     public class StringAverage
     {
-        private readonly Dictionary<object, object> _numberStringConverter = new Dictionary<object, object>
+        private readonly Dictionary<string, int> _numberStringConverter = new Dictionary<string, int>
         {
             {"zero", 0},{"one", 1},{"two", 2},{"three", 3},{"four", 4},{"five", 5},{"six", 6},{"seven", 7},{"eight", 8},{"nine", 9},
-            {0, "zero"},{1, "one"},{2, "two"},{3, "three"},{4, "four"},{5, "five"},{6, "six"},{7, "seven"},{8, "eight"},{9, "nine"},
         };
 
         private readonly string _invaildInput = "n/a";
@@ -17,20 +16,27 @@ namespace CodeWars._6kyu
         {
             if (string.IsNullOrEmpty(input)) return _invaildInput;
 
-            var numbers = input.Split(' ').Select(NumberStringConverter).ToList();
-            if (numbers.Contains(_invaildInput)) return _invaildInput;
+            var numbers = input.Split(' ').Select(NumberConverter).AsEnumerable();
+            if (numbers.Contains(-1)) return _invaildInput;
             var avarage = GetSum(numbers) / numbers.Count();
-            return NumberStringConverter(avarage).ToString();
+            return StringConverter(avarage);
         }
 
-        private static int GetSum(IEnumerable<object> numbers)
+        private static int GetSum(IEnumerable<int> numbers)
         {
-            return numbers.Select(num => (int)num).Sum();
+            return numbers.Sum();
         }
 
-        private object NumberStringConverter(object key)
+        private int NumberConverter(string key)
         {
-            return _numberStringConverter.ContainsKey(key) ? _numberStringConverter[key] : _invaildInput;
+            if (_numberStringConverter.ContainsKey(key))
+                return _numberStringConverter[key];
+            return -1;
+        }
+
+        private string StringConverter(int value)
+        {
+            return _numberStringConverter.First(converter => converter.Value == value).ToString();
         }
     }
 }
