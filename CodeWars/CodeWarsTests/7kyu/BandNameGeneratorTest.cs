@@ -12,8 +12,8 @@ namespace CodeWarsTests._7kyu
             AssertBankName("dolphin","The Dolphin");
         }
 
-        [TestCase("europe", "The Europeurope",TestName = "europe_ShouldBe_The_Europeurope")]
-        [TestCase("alaska", "The Alaskalaska", TestName = "alaska_ShouldBe_The_Alaskalaska")]
+        [TestCase("europe", "Europeurope",TestName = "europe_ShouldBe_Europeurope")]
+        [TestCase("alaska", "Alaskalaska", TestName = "alaska_ShouldBe_Alaskalaska")]
         public void BandName_With_StartAndEnd_InSameLetter(string orginialName,string expected)
         {
             AssertBankName(orginialName, expected);
