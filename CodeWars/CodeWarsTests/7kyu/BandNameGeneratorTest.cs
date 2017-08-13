@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using CodeWars._7kyu;
+using NUnit.Framework;
 
 namespace CodeWarsTests._7kyu
 {
@@ -8,19 +9,21 @@ namespace CodeWarsTests._7kyu
         [Test]
         public void BandName_dolphin_ShouldBe_The_Dolphin()
         {
-            var target = new BandNameGenerator();
-            var actual = target.GetBandName("dolphin");
-            Assert.AreEqual("The Dolphin", actual);
+            AssertBankName("dolphin","The Dolphin");
         }
-    }
 
-    public class BandNameGenerator
-    {
-        public string GetBandName(string originalName)
+        [TestCase("europe", "The Europeurope",TestName = "europe_ShouldBe_The_Europeurope")]
+        [TestCase("alaska", "The Alaskalaska", TestName = "alaska_ShouldBe_The_Alaskalaska")]
+        public void BandName_With_StartAndEnd_InSameLetter(string orginialName,string expected)
         {
-            var firstLetter = originalName[0].ToString().ToUpper();
-            var formattedName = "The " + firstLetter + originalName.Substring(1);
-            return formattedName;
+            AssertBankName(orginialName, expected);
+        }
+
+        private static void AssertBankName(string orginialName, string expected)
+        {
+            var target = new BandNameGenerator();
+            var actual = target.GetBandName(orginialName);
+            Assert.AreEqual(expected, actual);
         }
     }
 }

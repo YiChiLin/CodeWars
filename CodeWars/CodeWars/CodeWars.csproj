@@ -43,6 +43,7 @@
     <Compile Include="6kyu\PrimeString.cs" />
     <Compile Include="6kyu\StringAverage.cs" />
     <Compile Include="7kyu\Accumul.cs" />
+    <Compile Include="7kyu\BandNameGenerator.cs" />
     <Compile Include="Others\FizzBuzz.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
