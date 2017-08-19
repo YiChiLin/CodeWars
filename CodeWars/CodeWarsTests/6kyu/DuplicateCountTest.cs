@@ -8,6 +8,7 @@ namespace CodeWarsTests._6kyu
     public class DuplicateCountTest
     {
         [TestCase("",0,TestName = "EmptyString_CountIs_0")]
+        [TestCase(null,0,TestName = "Input_Null_CountIs_0")]
         [TestCase("AB",0,TestName = "CapitalizeInput_AB_CountIs_0")]
         [TestCase("ab",0,TestName = "LowerCaseInput_ab_CountIs_0")]
         [TestCase("aabb",2,TestName = "TwoDuplicateInput_aabb_CountIs_2")]
@@ -26,10 +27,12 @@ namespace CodeWarsTests._6kyu
     {
         public int GetCount(string input)
         {
-            input = input.ToLower();
+            if (string.IsNullOrEmpty(input))
+                return 0;
+
             var record = new Dictionary<char,int>();
 
-            foreach (var character in input)
+            foreach (var character in input.ToLower())
             {
                 if (record.ContainsKey(character))
                     record[character] += 1;
