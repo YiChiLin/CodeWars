@@ -7,7 +7,13 @@ namespace CodeWarsTests._6kyu
     [TestFixture]
     public class DuplicateCountTest
     {
+        [TestCase("",0,TestName = "EmptyString_CountIs_0")]
         [TestCase("AB",0,TestName = "CapitalizeInput_AB_CountIs_0")]
+        [TestCase("ab",0,TestName = "LowerCaseInput_ab_CountIs_0")]
+        [TestCase("aabb",2,TestName = "TwoDuplicateInput_aabb_CountIs_2")]
+        [TestCase("aabb1",2,TestName = "TwoDuplicateInputWithANumber_aabb1_CountIs_2")]
+        [TestCase("aabb11",3,TestName = "TwoDuplicateInputWithSameNumber_aabb11_CountIs_3")]
+        [TestCase("indivisibility", 1, TestName = "Input_indivisibility_CountIs_1")]
         public void Test(string input,int expected)
         {
             var target = new DuplicateCount();
@@ -31,7 +37,7 @@ namespace CodeWarsTests._6kyu
                     record.Add(character, 1);
             }
 
-            return record.Count(x => x.Value > 1);
+            return record.Count(item => item.Value > 1);
         }
     }
 }
