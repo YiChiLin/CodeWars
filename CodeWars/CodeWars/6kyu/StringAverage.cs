@@ -36,7 +36,7 @@ namespace CodeWars._6kyu
 
         private string StringConverter(int value)
         {
-            return _numberStringConverter.First(converter => converter.Value == value).ToString();
+            return _numberStringConverter.First(converter => converter.Value == value).Key;
         }
     }
 }
