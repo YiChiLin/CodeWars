@@ -47,6 +47,7 @@
     <Compile Include="7kyu\Accumul.cs" />
     <Compile Include="7kyu\BandNameGenerator.cs" />
     <Compile Include="Others\FizzBuzz.cs" />
+    <Compile Include="Others\TwoSum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
