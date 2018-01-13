@@ -65,6 +65,7 @@
     <Compile Include="6kyu\StringAverageTest.cs" />
     <Compile Include="6kyu\DeadAntCountTest.cs" />
     <Compile Include="6kyu\DuplicateCountTest.cs" />
+    <Compile Include="6kyu\MultipleOfThreeOrFiveTest.cs" />
     <Compile Include="7kyu\AccumulTest.cs" />
     <Compile Include="7kyu\BandNameGeneratorTest.cs" />
     <Compile Include="Others\FizzBuzzTest.cs" />
