@@ -13,7 +13,12 @@ namespace CodeWars._6kyu
             return verifiedList.Sum();
         }
 
-        private IEnumerable<int> GenerateAllNumbers(int input)
+        public int Solution2(int input)
+        {
+            return Enumerable.Range(1, input).Where(number => number % 3 == 0 || number % 5 == 0).Sum();
+        }
+
+        private static IEnumerable<int> GenerateAllNumbers(int input)
         {
             var allNumbers = new List<int>();
             for (var i = 1; i < input; i++)
