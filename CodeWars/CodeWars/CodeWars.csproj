@@ -44,6 +44,7 @@
     <Compile Include="6kyu\DuplicateCount.cs" />
     <Compile Include="6kyu\MultipleOfThreeOrFive.cs" />
     <Compile Include="6kyu\PrimeString.cs" />
+    <Compile Include="6kyu\SpinWordsWithMoreThan4Characters.cs" />
     <Compile Include="6kyu\StringAverage.cs" />
     <Compile Include="7kyu\Accumul.cs" />
     <Compile Include="7kyu\BandNameGenerator.cs" />
