@@ -48,5 +48,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CodeWars\CodeWars.csproj">
+      <Project>{788F9809-E7B6-40DC-A9E3-3EB5C3A181A2}</Project>
+      <Name>CodeWars</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

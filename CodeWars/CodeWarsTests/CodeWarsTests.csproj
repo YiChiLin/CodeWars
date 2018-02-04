@@ -67,6 +67,7 @@
     <Compile Include="6kyu\DuplicateCountTest.cs" />
     <Compile Include="6kyu\MultipleOfThreeOrFiveTest.cs" />
     <Compile Include="6kyu\SpinWordsWithMoreThan4CharactersTest.cs" />
+    <Compile Include="6kyu\SumOfDigitsTest.cs" />
     <Compile Include="7kyu\AccumulTest.cs" />
     <Compile Include="7kyu\BandNameGeneratorTest.cs" />
     <Compile Include="Others\FizzBuzzTest.cs" />
