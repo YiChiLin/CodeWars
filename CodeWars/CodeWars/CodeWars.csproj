@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="5kyu\Runner.cs" />
+    <Compile Include="5kyu\RunnersMeetings.cs" />
     <Compile Include="6kyu\BingoCard.cs" />
     <Compile Include="6kyu\DeadAnt.cs" />
     <Compile Include="6kyu\DuplicateCount.cs" />

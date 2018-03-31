@@ -60,6 +60,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="4kyu\NextSmallerNumberWithSameDigitsTest.cs" />
+    <Compile Include="5kyu\RunnersMeetingsTest.cs" />
     <Compile Include="6kyu\BingoCardTest.cs" />
     <Compile Include="6kyu\PrimStringTest.cs" />
     <Compile Include="6kyu\StringAverageTest.cs" />
